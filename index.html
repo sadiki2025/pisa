@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة عرض المنيو الرقمية 🍕</title>
+  
+  <!-- استدعاء الأيقونات والخطوط لضمان دقة العرض الرقمي -->
+  <link rel="stylesheet" href="https://cloudflare.com">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   <header class="header">
+    <div class="logo-area">🍕 بيتزا هت - المنيو الرقمي</div>
+    <div class="promo-text"><i class="fa-solid fa-fire"></i> عروض اليوم: خصم 50% على البيتزا الكبيرة!</div>
+  </header>
+
+  <main class="menu-grid">
+    
+    <!-- قسم البيتزا -->
+    <section class="category-column">
+      <h2 class="category-title"><i class="fa-solid fa-pizza-slice"></i> البيتزا الفاخرة</h2>
+      <div class="product-list">
+        <article class="product-row">
+          <img src="images/pasta1.png" alt="مارغريتا" class="product-img">
+          <div class="product-info">
+            <h3 class="product-name">مارغريتا الطازجة</h3>
+            <p class="product-desc">صلصة طماطم، موزاريلا وأعشاب</p>
+            <strong class="product-price">54.00 م د</strong>
+          </div>
+        </article>
+        
+        <article class="product-row">
+          <img src="images/pasta2.png" alt="Half & Half" class="product-img">
+          <div class="product-info">
+            <h3 class="product-name">بيتزا Half & Half</h3>
+            <p class="product-desc">نصف لحم ونصف خضار طازج</p>
+            <strong class="product-price">68.00 م د</strong>
+          </div>
+        </article>
+      </div> <!-- تم إغلاق وسم product-list هنا -->
+    </section>
+
+    <!-- قسم الكومبو -->
+    <section class="category-column">
+      <h2 class="category-title"><i class="fa-solid fa-box"></i> كومبو التوفير الخارق</h2>
+      <div class="product-list">
+        <article class="product-row">
+          <img src="images/pasta3.png" alt="كومبو البيتزا" class="product-img">
+          <div class="product-info">
+            <h3 class="product-name">كومبو البيتزا المشكلة</h3>
+            <p class="product-desc">بيتزا وسط من اختيارك + بطاطس + مشروب</p>
+            <strong class="product-price">49.00 م د</strong>
+          </div>
+        </article>
+        <article class="product-row">
+          <img src="images/pasta4.png" alt="كومبو خضار" class="product-img">
+          <div class="product-info">
+            <h3 class="product-name">كومبو ببيتزا الخضار</h3>
+            <p class="product-desc">بيتزا وسط خضار + بطاطس + مشروب غازي</p>
+            <strong class="product-price">49.00 م د</strong>
+          </div>
+        </article>
+      </div>
+      
+    </section>
+
+   
+
+  </main>
+
+  <!-- ─── كود الـ JavaScript للتمرير التلقائي الاحترافي البطيء ─── -->
+  <script>
+    const lists = document.querySelectorAll('.product-list');
+    
+    lists.forEach(list => {
+      let scrollAmount = 0;
+      let step = 1; // سرعة الحركة (1 بكسل في المرة)
+      
+      function autoScroll() {
+        // التحريك لليسار
+        list.scrollLeft -= step;
+        
+        // إذا وصل لنهاية القائمة تماماً، يعود للبداية بسلاسة
+        if (Math.abs(list.scrollLeft) >= (list.scrollWidth - list.clientWidth)) {
+          list.scrollLeft = 0;
+        }
+      }
+      
+      // تشغيل الحركة كل 30 ميلي ثانية لجعل التمرير ناعماً جداً ومريحاً للعين
+      setInterval(autoScroll, 30);
+    });
+  </script>
+
+</body>
+</html>
+
+
